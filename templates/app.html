@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Disease Predictor</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2 class="logo">CropVista
+        </h2>
+        <nav class="navigation" id="nav">
+            <a href="#">Home</a>
+            <a href="#">Marketplace</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Revolutionize Your Crop Health</h1>
+                <p>Our AI-powered crop disease prediction and management platform helps you identify and address issues before they become problems.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+            <div class="upload-container">
+                <h2>Upload Image</h2>
+                <p>Detect crop diseases by uploading an image.</p>
+                <div class="container" align="center">
+                    {% if file_path %}
+                        <div class="result" align="center">
+                            <h2 class="image_display">{{ label }}</h2>
+                            <img class="img-area" src="{{ url_for('static', filename=file_path) }}" alt="Uploaded Image">
+                            <button class="btn btn-primary upload-another" type="button" onclick="window.location.href='/'">Upload Another Image</button>
+                        </div>
+                    {% else %}
+                        <form action="/" method="post" enctype="multipart/form-data">
+                            <input type="file" id="file" name="file" accept="image/*" hidden>
+                            <div class="img-area" data-img="">
+                                <i class='bx bxs-cloud-upload icon'></i>
+                                <h3>Upload Image</h3>
+                                <img id="previewImg" src="" alt="Image Preview" style="display:none;">
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-primary select-image" type="button">Select Image</button>
+                                <button class="btn btn-secondary submit-image" type="submit">Predict</button>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <i class='bx bx-search-alt'></i>
+                <h3>Accurate Diagnosis</h3>
+                <p>Our advanced AI models can accurately identify crop diseases from uploaded images.</p>
+                <a href="#" class="btn btn-text">Learn More</a>
+            </div>
+            <div class="feature">
+                <i class='bx bx-list-ul'></i>
+                <h3>Personalized Recommendations</h3>
+                <p>Get detailed management recommendations for identified crop diseases.</p>
+                <a href="#" class="btn btn-text">Learn More</a>
+            </div>
+            <div class="feature">
+                <i class='bx bx-store'></i>
+                <h3>Marketplace Integration</h3>
+                <p>Discover and purchase high-quality crop supplements to address specific issues.</p>
+                <a href="#" class="btn btn-text">Visit Marketplace</a>
+            </div>
+        </section>
+
+        <section class="marketplace">
+            <h2>Crop Supplement Marketplace</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>Fungicide for Powdery Mildew</h3>
+                    <p>Organic fungicide to treat powdery mildew on crops.</p>
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+                <div class="product">
+                    <h3>Insecticide for Aphids</h3>
+                    <p>Natural insecticide to control aphid infestations.</p>
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+                <div class="product">
+                    <h3>Fertilizer for Nutrient Deficiency</h3>
+                    <p>Balanced fertilizer to address nutrient deficiencies.</p>
+                    <button class="btn btn-primary">Buy Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const fileInput = document.getElementById('file');
+        const imgArea = document.querySelector('.img-area');
+        const selectImageBtn = document.querySelector('.select-image');
+        const previewImg = document.getElementById('previewImg');
+
+        selectImageBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    previewImg.src = event.target.result;
+                    previewImg.style.display = 'block';
+                    imgArea.classList.add('show-img');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
