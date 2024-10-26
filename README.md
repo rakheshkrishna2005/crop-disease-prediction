@@ -1,32 +1,39 @@
-# Crop Disease Prediction and Management System
-## Smart India Hackathon 2024
-`This project is still under development, and not all features have been added yet.`
+# 🌾 Crop Disease Prediction and Management System
 
-## Description
-- Developed an advanced Crop Disease Predictor Web App using **AI-powered image recognition**.
-- Implemented a **deep learning model - CNN** using TensorFlow and Keras for accurate disease identification.
-- Built a Flask server backend to handle image uploads and deliver real-time disease predictions.
-- Supports identification of various crop diseases across multiple plant species.
-- Working on building the managment system for all the crops.
+## 👨‍💻 Smart India Hackathon 2024
 
-## Demo Video
+> ⚠️ *This project is under development; some features are still being added.*
+
+## 📜 Description
+
+- Developed an AI-powered **Crop Disease Predictor Web App** that uses advanced image recognition to identify crop diseases.
+- Implemented a **Convolutional Neural Network (CNN)** with TensorFlow and Keras for high-accuracy predictions.
+- Flask backend server to handle image uploads and provide real-time disease identification.
+- Capable of identifying a variety of diseases across multiple crop species.
+- Currently developing a **comprehensive management system** to support care recommendations for all crops.
+
+## 🎥 Demo Video
+
 https://github.com/user-attachments/assets/b56fab36-ef09-4e13-96c8-ff4e437f0705
 
-## Features
-- **AI-Powered Disease Detection:** Utilizes advanced machine learning algorithms to identify crop diseases from uploaded images.
-- **Real-Time Predictions:** Flask server processes image uploads and provides immediate disease classification results.
-- **User-Friendly Interface:** Intuitive web app design allows easy image upload and clear presentation of results.
-- **Comprehensive Disease Management:** Offers detailed information and treatment recommendations for identified diseases.
+## 🌟 Features
 
-## Tech Stack
-- **Programming Language:** Python
-- **Machine Learning Libraries:** TensorFlow, Keras
-- **Web Framework:** Flask
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Dataset:** Extensive collection of labeled crop disease images for training and validation
+- **AI-Powered Disease Detection**: Utilizes deep learning to accurately identify crop diseases from images.
+- **Real-Time Predictions**: Flask server handles image uploads, enabling instant disease classification.
+- **User-Friendly Interface**: Intuitive design allows easy image upload with clear result presentation.
+- **Detailed Disease Management**: Provides in-depth information and actionable treatment recommendations for each identified disease.
 
-## Additional Information
-- **Python Documentation:** [Python Documentation](https://docs.python.org/3/)
-- **Flask Documentation:** [Flask Documentation](https://flask.palletsprojects.com/en/latest/)
-- **Keras Documentation:** [Keras Documentation](https://keras.io/)
-- **TensorFlow Documentation:** [TensorFlow Documentation](https://www.tensorflow.org/learn)
+## 🛠️ Tech Stack
+
+- **Programming Language**: Python
+- **Machine Learning Libraries**: TensorFlow, Keras
+- **Web Framework**: Flask
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Dataset**: A diverse set of labeled crop disease images for training and validation
+
+## 📚 Additional Information
+
+- [Flask Documentation](https://flask.palletsprojects.com/en/latest/)
+- [Keras Documentation](https://keras.io/)
+- [Python Documentation](https://docs.python.org/3/)
+- [TensorFlow Documentation](https://www.tensorflow.org/learn)
